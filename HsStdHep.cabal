@@ -1,15 +1,15 @@
 Name:		HsStdHep
-Version:	0.0
+Version:	0.0.1
 Synopsis:	
 Description: 	
 License: 	BSD3
 License-file:	LICENSE
 Author:		Ian-Woo Kim
 Maintainer: 	Ian-Woo Kim <ianwookim@gmail.com>
-Build-Type: 	Simple
+Build-Type: 	Custom
 Cabal-Version:  >= 1.8
-data-files:     
-
+Extra-source-files: Config.hs
+                    stdhep/stdhep-5-06-01-IW.tar.gz
 
 Executable hsstdhep
   Main-is: hsstdhep.hs
