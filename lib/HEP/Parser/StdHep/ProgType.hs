@@ -1,6 +1,6 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 
-module HEP.Parser.StdHep.Type where 
+module HEP.Parser.StdHep.ProgType where 
 
 import System.Console.CmdArgs
 

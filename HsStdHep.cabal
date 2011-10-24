@@ -34,10 +34,24 @@ Library
                    base>4, mtl>2, directory, filepath,
                    cmdargs
   Exposed-Modules: 
-                   HEP.Parser.StdHep.Type
+                   HEP.Parser.StdHep.ProgType
                    HEP.Parser.StdHep.Job
                    HEP.Parser.StdHep.Command
+                   HEP.Parser.StdHep.FFI
   Other-Modules: 
+  Include-dirs:    include
+  Install-includes: hepeup.h
+                    hepev4.h
+                    heprup.h
+                    stdcm1.h
+                    stdcnt.h
+                    stdevent.h
+                    stdhd.h
+                    stdhep.h
+                    stdhep_mcfio.h
+                    stdlun.h
+                    stdtmp.h
+                    stdver.h
 
  
 		 

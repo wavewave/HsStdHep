@@ -1,6 +1,6 @@
 module HEP.Parser.StdHep.Command where
 
-import HEP.Parser.StdHep.Type
+import HEP.Parser.StdHep.ProgType
 import HEP.Parser.StdHep.Job
 
 commandLineProcess :: HsStdHep -> IO ()
