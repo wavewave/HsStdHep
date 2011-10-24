@@ -1,5 +1,5 @@
 Name:		HsStdHep
-Version:	0.0.1
+Version:	0.0.2
 Synopsis:	
 Description: 	
 License: 	BSD3
@@ -10,6 +10,12 @@ Build-Type: 	Custom
 Cabal-Version:  >= 1.8
 Extra-source-files: Config.hs
                     stdhep/stdhep-5-06-01-IW.tar.gz
+                    include/*.inc
+                    include/*.h
+                    include/herwig/*.inc
+                    include/isajet/*.inc
+                    include/pythia/*.inc
+                    include/qq/*.inc
 
 Executable hsstdhep
   Main-is: hsstdhep.hs
