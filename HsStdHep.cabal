@@ -1,5 +1,5 @@
 Name:		HsStdHep
-Version:	0.0.2
+Version:	0.0.3
 Synopsis:	
 Description: 	
 License: 	BSD3
@@ -37,21 +37,29 @@ Library
                    HEP.Parser.StdHep.ProgType
                    HEP.Parser.StdHep.Job
                    HEP.Parser.StdHep.Command
-                   HEP.Parser.StdHep.FFI
+                   HEP.Parser.StdHep.IO
+                   HEP.Parser.StdHep.TypeCast
   Other-Modules: 
-  Include-dirs:    include
-  Install-includes: hepeup.h
-                    hepev4.h
-                    heprup.h
-                    stdcm1.h
-                    stdcnt.h
-                    stdevent.h
-                    stdhd.h
-                    stdhep.h
-                    stdhep_mcfio.h
-                    stdlun.h
-                    stdtmp.h
-                    stdver.h
+  Include-dirs:    /Users/iankim/mac/temp/stdhep-5-06-01/src/inc, csrc
+  Install-includes: hs_stdhep_mcfio.h
+  C-sources:        csrc/hs_stdhep_mcfio.c  
+
+  extra-lib-dirs:  /Users/iankim/mac/temp/stdhep-5-06-01/lib
+  extra-libraries: Fmcfio, stdhep, stdhepC
+
+
+--  Install-includes: hepeup.h
+--                    hepev4.h
+--                    heprup.h
+--                    stdcm1.h
+--                    stdcnt.h
+--                    stdevent.h
+--                    stdhd.h
+--                    stdhep.h
+--                    stdhep_mcfio.h
+--                    stdlun.h
+--                    stdtmp.h
+--                    stdver.h
 
  
 		 
