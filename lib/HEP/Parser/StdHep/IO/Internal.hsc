@@ -1,6 +1,6 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 
-module HEP.Parser.StdHep.IO where
+module HEP.Parser.StdHep.IO.Internal where
 
 import Foreign.C
 import Foreign.Ptr
@@ -22,8 +22,6 @@ import HEP.Parser.StdHep.TypeCast
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrReadInit" c_StdHepXdrReadInit 
   :: CString -> CInt -> CInt -> IO CInt
 
-stdHepXdrReadInit :: String -> Int -> Int -> IO Int 
-stdHepXdrReadInit = xform3 c_StdHepXdrReadInit
 
 
 -- | StdHepXdrReadOpen 
@@ -33,8 +31,6 @@ stdHepXdrReadInit = xform3 c_StdHepXdrReadInit
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrReadOpen" c_StdHepXdrReadOpen 
   :: CString -> CInt -> CInt -> IO CInt 
 
-stdHepXdrReadOpen :: String -> Int -> Int -> IO Int 
-stdHepXdrReadOpen = xform3 c_StdHepXdrReadOpen
 
 -- | StdHepXdrRead
 --
@@ -43,8 +39,6 @@ stdHepXdrReadOpen = xform3 c_StdHepXdrReadOpen
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrRead" c_StdHepXdrRead 
   :: (Ptr CInt) -> CInt -> IO CInt 
 
-stdHepXdrRead :: (IORef Int) -> Int -> IO Int
-stdHepXdrRead = xform2WithWrap c_StdHepXdrRead
 
 -- | StdHepXdrReadMulti
 -- 
@@ -53,8 +47,6 @@ stdHepXdrRead = xform2WithWrap c_StdHepXdrRead
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrReadMulti" c_StdHepXdrReadMulti
   :: (Ptr CInt) -> CInt -> IO CInt 
 
-stdHepXdrReadMulti :: (IORef Int) -> Int -> IO Int
-stdHepXdrReadMulti = xform2WithWrap c_StdHepXdrReadMulti
 
 
 -- | StdHepXdrWriteInit
@@ -64,8 +56,6 @@ stdHepXdrReadMulti = xform2WithWrap c_StdHepXdrReadMulti
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrWriteInit" c_StdHepXdrWriteInit
   :: CString -> CString -> CInt -> CInt -> IO CInt 
 
-stdHepXdrWriteInit :: String -> String -> Int -> Int -> IO Int
-stdHepXdrWriteInit = xform4 c_StdHepXdrWriteInit
 
 
 -- | StdHepXdrWriteOpen
@@ -75,8 +65,6 @@ stdHepXdrWriteInit = xform4 c_StdHepXdrWriteInit
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrWriteOpen" c_StdHepXdrWriteOpen
   :: CString -> CString -> CInt -> CInt -> IO CInt 
 
-stdHepXdrWriteOpen :: String -> String -> Int -> Int -> IO Int 
-stdHepXdrWriteOpen = xform4 c_StdHepXdrWriteOpen
 
 -- | StdHepXdrWrite
 --
@@ -85,8 +73,6 @@ stdHepXdrWriteOpen = xform4 c_StdHepXdrWriteOpen
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrWrite" c_StdHepXdrWrite
   :: CInt -> CInt -> IO CInt 
 
-stdHepXdrWrite :: Int -> Int -> IO Int 
-stdHepXdrWrite = xform2 c_StdHepXdrWrite
 
 
 -- > StdHepXdrWriteCM
@@ -96,8 +82,6 @@ stdHepXdrWrite = xform2 c_StdHepXdrWrite
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrWriteCM" c_StdHepXdrWriteCM
   :: CInt -> CInt -> IO CInt 
 
-stdHepXdrWriteCM :: Int -> Int -> IO Int 
-stdHepXdrWriteCM = xform2 c_StdHepXdrWriteCM
 
 
 -- | StdHepXdrWriteEvent
@@ -107,8 +91,6 @@ stdHepXdrWriteCM = xform2 c_StdHepXdrWriteCM
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrWriteEvent" c_StdHepXdrWriteEvent
   :: CInt -> CInt -> IO CInt 
 
-stdHepXdrWriteEvent :: Int -> Int -> IO Int 
-stdHepXdrWriteEvent = xform2 c_StdHepXdrWriteEvent
 
 
 -- | StdHepXdrWriteEventLH
@@ -119,8 +101,6 @@ foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrWriteEventLH" c_StdHepXdrWrit
   :: CInt -> CInt -> IO CInt 
 
 
-stdHepXdrWriteEventLH :: Int -> Int -> IO Int
-stdHepXdrWriteEventLH = xform2 c_StdHepXdrWriteEventLH
 
 -- | StdHepXdrWriteEventEUP
 --
@@ -129,8 +109,6 @@ stdHepXdrWriteEventLH = xform2 c_StdHepXdrWriteEventLH
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrWriteEventEUP" c_StdHepXdrWriteEventEUP
   :: CInt -> CInt -> IO CInt 
 
-stdHepXdrWriteEventEUP :: Int -> Int -> IO Int
-stdHepXdrWriteEventEUP = xform2 c_StdHepXdrWriteEventEUP
 
 -- | StdHepXdrWriteEventRUP
 --
@@ -139,8 +117,6 @@ stdHepXdrWriteEventEUP = xform2 c_StdHepXdrWriteEventEUP
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrWriteEventRUP" c_StdHepXdrWriteEventRUP
   :: CInt -> CInt -> IO CInt 
 
-stdHepXdrWriteEventRUP :: Int -> Int -> IO Int
-stdHepXdrWriteEventRUP = xform2 c_StdHepXdrWriteEventRUP
 
 -- | StdHepXdrEnd
 --
@@ -149,8 +125,6 @@ stdHepXdrWriteEventRUP = xform2 c_StdHepXdrWriteEventRUP
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepXdrEnd" c_StdHepXdrEnd 
   :: CInt -> IO () 
 
-stdHepXdrEnd :: Int -> IO ()
-stdHepXdrEnd = xform1 c_StdHepXdrEnd 
 
 -- | StdHepPrintHeader
 --
@@ -159,8 +133,6 @@ stdHepXdrEnd = xform1 c_StdHepXdrEnd
 foreign import ccall "hs_stdhep_mcfio.h hsStdHepPrintHeader" c_StdHepPrintHeader
   :: IO () 
 
-stdHepPrintHeader :: IO ()
-stdHepPrintHeader = xform0 c_StdHepPrintHeader 
 
 
 
