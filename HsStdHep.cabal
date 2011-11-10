@@ -38,15 +38,17 @@ Library
                    HEP.Parser.StdHep.ProgType
                    HEP.Parser.StdHep.Job
                    HEP.Parser.StdHep.Command
+
+                   HEP.Parser.StdHep
                    HEP.Parser.StdHep.IO
-                   HEP.Parser.StdHep.TypeCast
---                   HEP.Parser.StdHep.SVM
-                   HEP.Parser.StdHep.Type
+                   HEP.Parser.StdHep.MCFIO
+                   HEP.Parser.StdHep.StdHep
 
   Other-Modules: 
                    HEP.Parser.StdHep.MCFIO.Internal 
                    HEP.Parser.StdHep.IO.Internal
-
+                   HEP.Parser.StdHep.StdHep.Internal
+                   HEP.Parser.StdHep.TypeCast
 
   Include-dirs:    /Users/iankim/mac/temp/stdhep-5-06-01/src/inc, 
                    /Users/iankim/mac/temp/stdhep-5-06-01/mcfio/src,
