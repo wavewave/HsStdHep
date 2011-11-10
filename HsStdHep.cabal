@@ -1,5 +1,5 @@
 Name:		HsStdHep
-Version:	0.0.3
+Version:	0.0.999
 Synopsis:	
 Description: 	
 License: 	BSD3
@@ -32,16 +32,25 @@ Library
   ghc-prof-options: -caf-all -auto-all
   Build-Depends: 
                    base>4, mtl>2, directory, filepath,
-                   cmdargs
+                   cmdargs, 
+                   bindings-DSL >= 1.0 && < 1.1
   Exposed-Modules: 
                    HEP.Parser.StdHep.ProgType
                    HEP.Parser.StdHep.Job
                    HEP.Parser.StdHep.Command
                    HEP.Parser.StdHep.IO
                    HEP.Parser.StdHep.TypeCast
+--                   HEP.Parser.StdHep.SVM
+                   HEP.Parser.StdHep.Type
+                   HEP.Parser.StdHep.MCFIO.Internal 
   Other-Modules: 
-  Include-dirs:    /Users/iankim/mac/temp/stdhep-5-06-01/src/inc, csrc
+  Include-dirs:    /Users/iankim/mac/temp/stdhep-5-06-01/src/inc, 
+                   /Users/iankim/mac/temp/stdhep-5-06-01/mcfio/src,
+                   csrc
+
   Install-includes: hs_stdhep_mcfio.h
+                    hs_stdhep.h
+                    hs_mcfio.h
   C-sources:        csrc/hs_stdhep_mcfio.c  
 
   extra-lib-dirs:  /Users/iankim/mac/temp/stdhep-5-06-01/lib

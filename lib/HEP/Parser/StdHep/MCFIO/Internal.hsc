@@ -1,0 +1,49 @@
+{-# LANGUAGE ForeignFunctionInterface #-}
+
+#include <bindings.dsl.h>
+#include <rpc/types.h>
+#include <sys/types.h>
+
+module HEP.Parser.StdHep.MCFIO.Internal where
+#strict_import 
+
+#include "hs_mcfio.h"
+
+#num MCFIO_VERSION
+#num MCFIO_STATUS
+#num MCFIO_RUNNING
+#num MCFIO_BOF
+#num MCFIO_EOF 
+#num MCFIO_NUMBLOCKS 
+#num MCFIO_READORWRITE 
+#num MCFIO_READ 
+#num MCFIO_WRITE 
+#num MCFIO_DIRECTORSEQUENTIAL 
+#num MCFIO_DIRECT 
+#num MCFIO_SEQUENTIAL 
+#num MCFIO_MEMMAPPED 
+#num MCFIO_BLOCKIDS 
+#num MCFIO_NUMWORDS 
+#num MCFIO_EFFICIENCY 
+#num MCFIO_NUMEVTS 
+#num MCFIO_FILENUMBER 
+#num MCFIO_MAXREC
+#num MCFIO_MINREC 
+#num MCFIO_NUMRECORDS 
+#num MCFIO_RECORDLENGTHS 
+#num MCFIO_TITLE 
+#num MCFIO_COMMENT 
+#num MCFIO_CREATIONDATE 
+#num MCFIO_CLOSINGDATE
+#num MCFIO_FILENAME 
+#num MCFIO_DEVICENAME 
+#num MCFIO_EVENTNUMBER 
+#num MCFIO_STORENUMBER
+#num MCFIO_RUNNUMBER
+#num MCFIO_TRIGGERMASK 
+#num MCFIO_NUMNTUPLES
+#num MCFIO_NTUPLESLIST 
+
+#ccall mcfioC_Init , IO ()
+
+
